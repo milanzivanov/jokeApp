@@ -6,9 +6,13 @@ import { Joke } from '../jokeclass';
   template:
   `
     <div class="card card-block">
-        <h4 class="card-title">{{joke.setup}}</h4>
+        <h4 class="card-title">
+            <ng-content select=".setup"></ng-content>
+        </h4>
         <p class="card-text"
-        [hidden]="joke.hide">{{joke.punchline}}</p>
+        [hidden]="joke.hide">
+            <ng-content select=".punchline"></ng-content>
+        </p>
         <a (click)="joke.toggle()"
         class="btn btn-warning">
             Tell Me

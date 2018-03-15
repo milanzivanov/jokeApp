@@ -7,6 +7,8 @@ import { Joke } from '../jokeclass';
   <app-joke-form (jokeCreated)="addJoke($event)"></app-joke-form>
   <app-joke *ngFor="let j of jokes" 
             [joke]="j" (jokeDeliting)="deleteJoke($event)">
+        <span class="setup">{{ j.setup }}?</span>
+        <h1 class="punchline">{{ j.punchline }}</h1>
   </app-joke>
 
   `,
